@@ -1,0 +1,14 @@
+services:
+  drawdb:
+    image: ssqlone/drawdb:latest
+    container_name: drawdb
+    restart: unless-stopped
+    expose:
+      - 80
+    environment:
+      - VITE_BACKEND_URL=https://drawdb.site.com
+    networks:
+      - proxy
+networks:
+  proxy:
+    external: true
